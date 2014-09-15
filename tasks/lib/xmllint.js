@@ -26,7 +26,7 @@ Licensed under the BSD license.
       maxBuffer: 200 * 1024
     };
     buildCommand = function(dir) {
-      var suffix, suffixes;
+      var linuxFlag, suffix, suffixes;
       suffixes = (function() {
         var _i, _len, _ref, _results;
         _ref = config.suffixes;
@@ -37,11 +37,11 @@ Licensed under the BSD license.
         }
         return _results;
       })();
-      console.log("suffixes", suffixes);
+      linuxFlag = process.platform === 'linux' ? '-r ' : '';
       cmd = "find " + dir;
       cmd += " " + (suffixes.join(' -o '));
       cmd += " -print0";
-      cmd += " | xargs -0 -n 1 " + (path.normalize(config.bin));
+      cmd += " | xargs " + linuxFlag + "-0 -n 1 " + (path.normalize(config.bin));
       if (!config.verbose) {
         cmd += " > /dev/null";
       }

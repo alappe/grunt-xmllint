@@ -22,11 +22,11 @@ exports.init = (grunt) ->
   buildCommand = (dir) ->
     suffixes = for suffix in config.suffixes
       "-name *.#{suffix}"
-    console.log "suffixes", suffixes
+    linuxFlag = if process.platform is 'linux' then '-r ' else ''
     cmd = "find #{dir}"
     cmd += " #{suffixes.join ' -o '}"
     cmd += " -print0"
-    cmd += " | xargs -0 -n 1 #{path.normalize config.bin}"
+    cmd += " | xargs #{linuxFlag}-0 -n 1 #{path.normalize config.bin}"
     cmd += " > /dev/null" unless config.verbose
     console.log "command #{cmd}"
     cmd

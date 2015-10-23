@@ -1,6 +1,6 @@
 {
   "name": "grunt-xmllint",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Grunt plugin for running xmllint.",
   "main": "tasks/xmllint.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "keywords": [
     "gruntplugin",
     "xml",
-		"xmllint",
-		"linting",
+    "xmllint",
+    "linting",
     "ci",
     "continous-integration"
   ],
@@ -22,7 +22,7 @@
   "devDependencies": {
     "grunt": "~0.4.0"
   },
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/alappe/grunt-xmllint/issues"
   }

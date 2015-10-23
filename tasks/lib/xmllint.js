@@ -33,7 +33,7 @@ Licensed under the BSD license.
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           suffix = _ref[_i];
-          _results.push("-name *." + suffix);
+          _results.push("-name \"*." + suffix + "\"");
         }
         return _results;
       })();

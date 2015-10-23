@@ -21,7 +21,7 @@ exports.init = (grunt) ->
 
   buildCommand = (dir) ->
     suffixes = for suffix in config.suffixes
-      "-name *.#{suffix}"
+      "-name \"*.#{suffix}\""
     console.log "suffixes", suffixes
     cmd = "find #{dir}"
     cmd += " #{suffixes.join ' -o '}"
